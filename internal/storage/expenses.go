@@ -14,7 +14,7 @@ type Expense struct {
 	Amount      float64 `json:"amount"`
 }
 
-func loadExpenses(filename string) ([]Expense, error) {
+func LoadExpenses(filename string) ([]Expense, error) {
 	var expenses []Expense
 
 	file, err := os.Open(filename)
@@ -54,7 +54,7 @@ func saveExpenses(filename string, expenses []Expense) error {
 }
 
 func AddExpense(filename, description string, amount float64) (int, error) {
-	expenses, err := loadExpenses(filename)
+	expenses, err := LoadExpenses(filename)
 	if err != nil {
 		return 0, err
 	}
