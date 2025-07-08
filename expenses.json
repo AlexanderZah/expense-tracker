@@ -1,11 +1,5 @@
 [
   {
-    "id": 1,
-    "date": "2025-07-06T22:28:33+03:00",
-    "description": "Lunch",
-    "amount": 20
-  },
-  {
     "id": 2,
     "date": "2025-07-06T22:28:58+03:00",
     "description": "Dinner",

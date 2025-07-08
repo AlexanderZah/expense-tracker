@@ -2,6 +2,7 @@ package storage
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"os"
 	"time"
@@ -74,4 +75,28 @@ func AddExpense(filename, description string, amount float64) (int, error) {
 	expenses = append(expenses, newExpense)
 
 	return newID, saveExpenses(filename, expenses)
+}
+
+func DeleteExpenseByID(filename string, id int) error {
+	expenses, err := LoadExpenses(filename)
+	if err != nil {
+		return err
+	}
+
+	newExpenses := make([]Expense, 0, len(expenses))
+	found := false
+
+	for _, expense := range expenses {
+		if expense.ID == id {
+			found = true
+			continue
+		}
+		newExpenses = append(newExpenses, expense)
+	}
+
+	if !found {
+		return fmt.Errorf("expense with ID %d not found", id)
+	}
+
+	return saveExpenses(filename, newExpenses)
 }
