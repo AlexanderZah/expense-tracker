@@ -14,7 +14,7 @@
 1. Убедитесь, что у вас установлен Go (версии 1.16 или выше)
 2. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/AleksaAlekszZakharov/expense-tracker.git
+   git clone https://github.com/AlexanderZah/expense-tracker.git
    ```
 3. Перейдите в директорию проекта
     ```
